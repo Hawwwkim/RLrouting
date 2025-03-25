@@ -31,7 +31,7 @@ NUM_BUFFERS             = 1  # NO EXPERIENCE REPLAY int(NUM_THREADS / 2)
 SUMMARY_WINDOW          = 10
 load_model              = False
 RESET_TRAINER           = False
-training_version        = 'astar3_continuous_0.5IL_ray2'
+training_version        = 'test'
 model_path              = 'model_' + training_version
 gifs_path               = 'gifs_' + training_version
 train_path              = 'train_' + training_version
@@ -57,7 +57,7 @@ swarm_reward            = [0] * NUM_META_AGENTS
 swarm_targets           = [0] * NUM_META_AGENTS
 
 # Shared arrays for tensorboard
-episode_rewards         = [[] for _ in range(NUM_META_AGENTS)] 
+episode_rewards         = [[] for _ in range(NUM_META_AGENTS)]
 episode_finishes        = [[] for _ in range(NUM_META_AGENTS)]
 episode_lengths         = [[] for _ in range(NUM_META_AGENTS)]
 episode_mean_values     = [[] for _ in range(NUM_META_AGENTS)]
@@ -67,7 +67,7 @@ episode_wrong_blocking  = [[] for _ in range(NUM_META_AGENTS)]
 rollouts                = [None for _ in range(NUM_META_AGENTS)]
 GIF_frames              = []
 
-# Joint variables 
+# Joint variables
 joint_actions           = [{} for _ in range(NUM_META_AGENTS)]
 joint_env               = [None for _ in range(NUM_META_AGENTS)]
 joint_observations      =[{} for _ in range(NUM_META_AGENTS)]
@@ -88,7 +88,7 @@ class JOB_OPTIONS:
 class COMPUTE_OPTIONS:
     multiThreaded = 1
     synchronous = 2
-    
+
 
 JOB_TYPE = JOB_OPTIONS.getGradient
 COMPUTE_TYPE = COMPUTE_OPTIONS.multiThreaded
